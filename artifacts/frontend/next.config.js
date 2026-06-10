@@ -7,16 +7,16 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: "/(.*)",
+        source: '/(.*)',
         headers: [
           {
-            key: "X-Frame-Options",
-            value: "ALLOWALL",
-          },
-        ],
-      },
-    ];
-  },
-};
+            key: 'X-Frame-Options',
+            value: 'ALLOWALL'
+          }
+        ]
+      }
+    ]
+  }
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
