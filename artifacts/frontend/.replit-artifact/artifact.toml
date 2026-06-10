@@ -1,0 +1,12 @@
+kind = "web"
+previewPath = "/"
+title = "CivicAI Uganda"
+version = "1.0.0"
+
+[[services]]
+localPort = 3000
+name = "Frontend"
+paths = ["/"]
+
+[services.development]
+run = "pnpm --filter @workspace/frontend run dev"

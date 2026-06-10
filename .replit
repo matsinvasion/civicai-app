@@ -9,16 +9,18 @@ args = ["pnpm", "store", "prune"]
 env = { "CI" = "true" }
 
 [workflows]
-runButton = "Project"
+runButton = "Frontend"
 
 [[workflows.workflow]]
-name = "Project"
-mode = "parallel"
+name = "Frontend"
 author = "agent"
 
 [[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Chatbot"
+task = "shell.exec"
+args = "cd artifacts/frontend && npx next dev -p 3000 -H 0.0.0.0"
+
+[workflows.workflow.metadata]
+outputType = "web"
 
 [[workflows.workflow]]
 name = "Chatbot"
@@ -46,16 +48,3 @@ externalPort = 3000
 [[ports]]
 localPort = 8080
 externalPort = 80
-
-[[ports]]
-localPort = 8081
-externalPort = 8081
-
-[userenv]
-
-[userenv.shared]
-SUPABASE_URL = "https://lwtkkmvflhxbkmgiyqai.supabase.co"
-SUPABASE_SERVICE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3dGtrbXZmbGh4YmttZ2l5cWFpIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MDg3NDQwMSwiZXhwIjoyMDk2NDUwNDAxfQ.5dk00rH5HB5LwIZKBmLdZEm4XpwEk2F27B8s1ziSmsw"
-OPENAI_API_KEY = "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"
-GEMINI_API_KEY = "AQ.Ab8RN6KNvTBSUqZNZK_EjWpMAB-aZhWiilZIRa_iPuTZAmehWg"
-HF_API_KEY = "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"

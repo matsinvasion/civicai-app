@@ -1,11 +1,11 @@
 {
-  "name": "civicai-uganda",
+  "name": "@workspace/frontend",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p ${PORT:-3000}",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p ${PORT:-3000}"
   },
   "dependencies": {
     "next": "latest",
